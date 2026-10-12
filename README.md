@@ -88,7 +88,7 @@ Preencha com a mediana de 3 execuções, no mesmo ambiente nas duas medições (
 | Artigo | Performance (nota) | _preencher_ | _preencher_ |
 | Artigo | Accessibility / SEO | _preencher_ | _preencher_ |
 
-**Como medir "antes"**: faça `git checkout 4c49f84`, rode `npm install`, `npm run build`, `npm start` e gere o relatório. **Para o "depois"**: volte para esta branch e repita os mesmos passos.
+**Como medir "antes"**: faça `git checkout antes` (tag no commit `4c49f84`, a versão original), rode `npm install`, `npm run build`, `npm start` e gere o relatório. **Para o "depois"**: faça `git checkout main` (ou `git checkout depois`) e repita os mesmos passos.
 
 Para o "depois", cole aqui os prints dos relatórios e comente quais mudanças tiveram maior impacto.
 
