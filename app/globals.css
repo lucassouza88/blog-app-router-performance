@@ -10,6 +10,20 @@ body {
   padding: 1rem 2rem;
 }
 
+.brand {
+  margin: 0.67em 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.page-title {
+  font-size: 1.5em;
+}
+
+.card h2 {
+  font-size: 1.17em;
+}
+
 .container {
   max-width: 900px;
   margin: 2rem auto;
@@ -32,10 +46,4 @@ body {
   color: #2563eb;
   font-weight: bold;
   text-decoration: none;
-}
-
-.article {
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
 }

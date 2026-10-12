@@ -14,7 +14,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body>
         <header className="header">
-          <h1>🚀 Blog Next.js</h1>
+          <p className="brand">🚀 Blog Next.js</p>
         </header>
         {children}
       </body>

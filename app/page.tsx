@@ -8,12 +8,12 @@ export default async function HomePage() {
 
   return (
     <main className="container">
-      <h2>Artigos</h2>
+      <h1 className="page-title">Artigos</h1>
 
       <div className="grid">
         {artigos.map((artigo) => (
           <div key={artigo.slug} className="card">
-            <h3>{artigo.titulo}</h3>
+            <h2>{artigo.titulo}</h2>
             <p>
               {artigo.autor} • {artigo.data}
             </p>
