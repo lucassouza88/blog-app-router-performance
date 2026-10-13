@@ -73,25 +73,31 @@ Medições feitas sobre os arquivos do repositório. Detalhes nos PDFs de `repor
 | `h1` na página de artigo | 2 | 1 | corrigido |
 | Header `X-Powered-By` | presente | removido | corrigido |
 
-### 2) Lighthouse (a preencher com a medição no Chrome)
+### 2) Lighthouse (medido)
 
-Preencha com a mediana de 3 execuções, no mesmo ambiente nas duas medições (build de produção, janela anônima, Mobile). Salve os relatórios em `reports/lighthouse/antes` e `reports/lighthouse/depois`.
+Mediana de 3 execuções por página, modo Mobile, build de produção (`npm start`) e janela anônima do Chrome, com as mesmas condições nas duas versões. Os relatórios completos estão em `reports/lighthouse/antes` e `reports/lighthouse/depois`.
 
 | Página | Métrica | Antes | Depois |
 |--------|---------|-------|--------|
 | Home | Performance (nota) | 95 | 97 |
-| Home | FCP | 1,0 | 1,0 |
-| Home | LCP | 1,9 | 1,9 |
-| Home | TBT | 155 | 160 |
+| Home | FCP | 1,0 s | 1,0 s |
+| Home | LCP | 1,9 s | 1,9 s |
+| Home | TBT | 155 ms | 160 ms |
 | Home | CLS | 0 | 0 |
-| Home | Speed Index | 1,0 | 1,0 |
+| Home | Speed Index | 1,0 s | 1,0 s |
 | Artigo | Performance (nota) | 95 | 97 |
-| Artigo | Accessibility / SEO | 97 | 100 |
+| Artigo | Accessibility | 100 | 100 |
+| Artigo | SEO | 100 | 100 |
 
-**Como medir "antes"**: faça `git checkout antes` (tag no commit `4c49f84`, a versão original), rode `npm install`, `npm run build`, `npm start` e gere o relatório. **Para o "depois"**: faça `git checkout main` (ou `git checkout depois`) e repita os mesmos passos.
+**Como reproduzir**: `git checkout antes` (versão original, commit `4c49f84`), `npm install`, `npm run build`, `npm start` e rode o Lighthouse. Para o "depois", use `git checkout main` e repita.
 
-Para o "depois", cole aqui os prints dos relatórios e comente quais mudanças tiveram maior impacto.
+### Quais mudanças tiveram mais impacto
+
+- **Performance (95 para 97)**: a diferença de 2 pontos é pequena e fica na faixa de variação entre execuções. FCP, LCP, Speed Index e CLS não mudaram, e o TBT foi de 155 ms para 160 ms, também dentro dessa variação. Não dá para atribuir esse ganho a uma mudança específica. O que pesa no carregamento é o JavaScript do próprio React e do Next (cerca de 102 kB compartilhados), que este exercício não altera.
+- **Accessibility e SEO**: já estavam em 100 na versão original e se mantiveram.
+- **Arquivos removidos, favicon e `next.config.ts`**: reduziram o repositório e o favicon (de 25,9 KB para 15,1 KB), mas não aparecem como ganho no Lighthouse, porque os arquivos removidos nunca eram carregados pelas páginas.
+- **Correção dos títulos (um único `h1` por página)**: melhora a estrutura semântica do HTML, mas o Lighthouse não apontava isso como problema, então não mudou as notas.
 
 ## Conclusão
 
-Como o projeto já era enxuto (rotas estáticas, três dependências e sem imagens), o ganho é pequeno em bytes e vem principalmente da limpeza, do favicon e da correção semântica dos títulos. O resultado mostra que, em um projeto bem estruturado, o ponto de partida já é bom e as otimizações restantes são de baixo impacto.
+Como o projeto já era enxuto (rotas estáticas, três dependências e sem imagens), o ganho medido no Lighthouse é pequeno e está dentro da variação das medições. Os ganhos concretos estão na limpeza do código e do repositório, documentados na análise estática. O resultado mostra que, em um projeto bem estruturado, o ponto de partida já é bom e as otimizações restantes são de baixo impacto. Para um ganho maior, o próximo passo seria acrescentar imagens com `next/image` (WebP/AVIF e lazy loading) e medir de novo.
