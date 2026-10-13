@@ -79,14 +79,14 @@ Preencha com a mediana de 3 execuções, no mesmo ambiente nas duas medições (
 
 | Página | Métrica | Antes | Depois |
 |--------|---------|-------|--------|
-| Home | Performance (nota) | _preencher_ | _preencher_ |
-| Home | FCP | _preencher_ | _preencher_ |
-| Home | LCP | _preencher_ | _preencher_ |
-| Home | TBT | _preencher_ | _preencher_ |
-| Home | CLS | _preencher_ | _preencher_ |
-| Home | Speed Index | _preencher_ | _preencher_ |
-| Artigo | Performance (nota) | _preencher_ | _preencher_ |
-| Artigo | Accessibility / SEO | _preencher_ | _preencher_ |
+| Home | Performance (nota) | 80 | 100 |
+| Home | FCP | 79 | 100 |
+| Home | LCP | 91 | 100 |
+| Home | TBT | 94 | 100 |
+| Home | CLS | 99 | 100 |
+| Home | Speed Index | 99 | 100 |
+| Artigo | Performance (nota) | _preencher_ | 100 |
+| Artigo | Accessibility / SEO | 87 | 100 |
 
 **Como medir "antes"**: faça `git checkout antes` (tag no commit `4c49f84`, a versão original), rode `npm install`, `npm run build`, `npm start` e gere o relatório. **Para o "depois"**: faça `git checkout main` (ou `git checkout depois`) e repita os mesmos passos.
 
