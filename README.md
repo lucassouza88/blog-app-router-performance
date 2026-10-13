@@ -85,7 +85,7 @@ Preencha com a mediana de 3 execuções, no mesmo ambiente nas duas medições (
 | Home | TBT | 94 | 100 |
 | Home | CLS | 99 | 100 |
 | Home | Speed Index | 99 | 100 |
-| Artigo | Performance (nota) | _preencher_ | 100 |
+| Artigo | Performance (nota) | 97 | 100 |
 | Artigo | Accessibility / SEO | 87 | 100 |
 
 **Como medir "antes"**: faça `git checkout antes` (tag no commit `4c49f84`, a versão original), rode `npm install`, `npm run build`, `npm start` e gere o relatório. **Para o "depois"**: faça `git checkout main` (ou `git checkout depois`) e repita os mesmos passos.
